@@ -2,16 +2,19 @@ import React, { useState, useEffect } from "react";
 import Loader from 'react-loader-spinner';
 
 import { getNasaPhoto } from './utilities/fetchData';
+import DateQuery from './components/DateQuery';
 import DisplayMedia from './components/DisplayMedia';
 import DisplayInfo from './components/DisplayInfo';
 
 function App() {
   const [ dataFromNasa, setDataFromNasa ] = useState('');
+  const [ currentDate, setCurrentDate ] = useState('');
 
   useEffect( () => {
-    getNasaPhoto()
-      .then( json => setTimeout( () => {setDataFromNasa(json)}, 3000));
+   getNasaPhoto().then( json => setTimeout( () => {setDataFromNasa(json)}, 3000));
   }, []);
+
+  console.log(dataFromNasa);
 
   if (!dataFromNasa) {
     return (
@@ -23,6 +26,7 @@ function App() {
 
   return (
     <div className="App">
+      <DateQuery setDataFromNasa={setDataFromNasa} currentDate={dataFromNasa.date} />
       <DisplayMedia media_type={dataFromNasa.media_type} url={dataFromNasa.url} title={dataFromNasa.title} />
       <DisplayInfo title={dataFromNasa.title} date={dataFromNasa.date} explanation={dataFromNasa.explanation} />
     </div>
