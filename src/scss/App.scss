@@ -1,0 +1,43 @@
+.loader-spinner {
+  min-height: calc(100vh - 2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  width: calc(100vw - 2rem);
+  margin: 2rem auto;
+  text-align: center;
+
+  img {
+    width: 31.25em;
+  }
+
+  iframe {
+    width: 31.25em;
+    height: 17.625em;
+    border: none;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  }
+
+  .description {
+    margin-top: 2.5em;
+  }
+
+  h1 {
+    margin: 0 0 1.25rem 0;
+    font-size: 3rem;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+  }
+
+
+  p {
+    width: calc(100% - 1.25rem);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    font: 1rem/1.375em helvetica, 'helvetiva neue', arial, sans-serif;
+    letter-spacing: 0.02rem;
+  }
+}
