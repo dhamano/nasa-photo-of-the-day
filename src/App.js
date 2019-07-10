@@ -8,7 +8,6 @@ import DisplayInfo from './components/DisplayInfo';
 
 function App() {
   const [ dataFromNasa, setDataFromNasa ] = useState('');
-  const [ currentDate, setCurrentDate ] = useState('');
 
   useEffect( () => {
    getNasaPhoto().then( json => setTimeout( () => {setDataFromNasa(json)}, 3000));
